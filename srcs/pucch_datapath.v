@@ -7,7 +7,8 @@ module pucch_datapath #(
 )(
     input  wire        clk, rst_n,
     input  wire        i_run_pre_cal, i_adc_valid_gated, i_flush,
-    input  wire [9:0]  i_pci, i_hopping_id, i_rrc_configured,
+    input  wire [9:0]  i_pci, i_hopping_id, 
+    input  wire        i_rrc_configured,
     input  wire [3:0]  i_m0, i_alpha_shift,
     input  wire        i_group_hopping, i_is_2bit_mode, i_param_en,
     input  wire [11:0] i_start_re_idx,
