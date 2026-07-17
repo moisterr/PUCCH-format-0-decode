@@ -47,7 +47,7 @@ Some algorithms implemented
 │   └── tb_pucch_top.sv
 
 
-## 🧪 Verification Strategy
+🧪 Verification Strategy
 The verification process employs a strict Co-simulation approach to ensure bit-true and cycle-true accuracy:
 Golden Model: MATLAB is used to generate realistic 5G NR baseband I/Q test vectors (including noise models) and compute the expected output.
 RTL Simulation: The test vectors are fed into the SystemVerilog testbench and simulated using Xilinx Vivado.
