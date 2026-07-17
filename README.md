@@ -43,3 +43,26 @@ The decoder architecture is designed to accurately extract the Uplink Control In
 │               └── pucch_logic_decoder.v
 ├── tb/                                       # Testbenches for simulation
 │   └── tb_pucch_top.sv
+
+
+## 🧪 Verification Strategy
+The verification process employs a strict Co-simulation approach to ensure bit-true and cycle-true accuracy:
+1.  **Golden Model:** MATLAB is used to generate realistic 5G NR baseband I/Q test vectors (including noise models) and compute the expected output.
+2.  **RTL Simulation:** The test vectors are fed into the SystemVerilog testbench and simulated using Xilinx Vivado.
+3.  **Result Analysis:** The RTL outputs (waveforms and text dumps) are compared against the MATLAB golden model to verify functional correctness and timing constraints.
+
+### ⏱️ Timing Summary
+The system successfully achieved timing closure with zero failing endpoints across all categories. 
+
+| Category | Worst Slack | Total Slack | Failing Endpoints | Total Endpoints |
+| :--- | :--- | :--- | :--- | :--- |
+| **Setup** | 2.606 ns (WNS) | 0.000 ns (TNS) | 0 | 36405 |
+| **Hold** | 0.010 ns (WHS) | 0.000 ns (THS) | 0 | 36405 |
+| **Pulse Width** | 3.527 ns (WPWS) | 0.000 ns (TPWS) | 0 | 12587 |
+
+### 📊 Synthesis & Performance Results
+*   **Target Clock Frequency:** 122.88 MHz
+*   **LUTs Utilization:** 5485 (0.46%)
+*   **DSP Slices:** 104
+*   **BRAM:** 18.50
+*   **Latency:** 15-17 us
