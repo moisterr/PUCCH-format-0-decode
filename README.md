@@ -53,8 +53,8 @@ Golden Model: MATLAB is used to generate realistic 5G NR baseband I/Q test vecto
 RTL Simulation: The test vectors are fed into the SystemVerilog testbench and simulated using Xilinx Vivado.
 Result Analysis: The RTL outputs (waveforms and text dumps) are compared against the MATLAB golden model to verify functional correctness and timing constraints.
 
-⏱️ Timing summary
-The system successfully achieved timing closure with zero failing endpoints across all categories. 
+⏱️ Timing Summary
+The system successfully achieved timing closure with zero failing endpoints across all categories.
 
 | Category | Worst Slack | Total Slack | Failing Endpoints | Total Endpoints |
 | :--- | :--- | :--- | :--- | :--- |
