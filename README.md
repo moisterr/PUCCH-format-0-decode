@@ -15,8 +15,9 @@ This project was developed as a graduation thesis to demonstrate advanced digita
 The decoder architecture is designed to accurately extract the Uplink Control Information (UCI) bits (ACK/NACK, SR) from the received baseband signals. The core hardware modules include:
 
 1.  **Input Buffer & Control Logic:** Manages the incoming I/Q data streams and synchronizes the processing pipeline.
-2.  **Goertzel Algorithm Branch:** Efficiently computes specific Discrete Fourier Transform (DFT) terms to detect the presence of sequence cyclic shifts. Optimized for MAC (Multiply-Accumulate) operations to minimize DSP slice utilization.
-3.  **Peak Detector:** Analyzes the output from the Goertzel branches to identify the index of the maximum energy, mapping it back to the transmitted UCI bits.
+2.  **XOR Matrix for Fast State Jumping:** Integrated a parallel XOR matrix logic to accelerate sequence generation and hopping mechanisms. This architecture allows the system to compute rapid state transitions in a single clock cycle, significantly reducing datapath latency compared to traditional serial shift registers.
+3.  **Goertzel Algorithm Branch:** Efficiently computes specific Discrete Fourier Transform (DFT) terms to detect the presence of sequence cyclic shifts. Optimized for MAC (Multiply-Accumulate) operations to minimize DSP slice utilization.
+4.  **Peak Detector:** Analyzes the output from the Goertzel branches to identify the index of the maximum energy, mapping it back to the transmitted UCI bits.
 
 
 
@@ -27,7 +28,8 @@ RTL Simulation: The test vectors are fed into the SystemVerilog testbench and si
 Result Analysis: The RTL outputs (waveforms and text dumps) are compared against the MATLAB golden model to verify functional correctness and timing constraints.
 
 📊 Synthesis & Performance Results
-Target Clock Frequency: 122.88 MHz
-LUTs Utilization: 5485 (0.46%)
-DSP Slices: 104
-BRAM: 18.50
+Target Clock Frequency: [122.88 MHz]
+LUTs Utilization: [5485 (0.46%)]
+DSP Slices: [104]
+BRAM: [18.50]
+Latency: [15-17 us]
