@@ -14,7 +14,8 @@ This project was developed as a graduation thesis to demonstrate advanced digita
 ## 🏗️ System Architecture
 The decoder architecture is designed to accurately extract the Uplink Control Information (UCI) bits (ACK/NACK, SR) from the received baseband signals.
 
-<img width="1190" height="472" alt="ARCHITECTURE" src="[https://github.com/user-attachments/assets/a6c00ad8-5773-418e-89a3-cad30770fe24](https://github.com/user-attachments/assets/a6c00ad8-5773-418e-89a3-cad30770fe24)" />
+<img width="1190" height="472" alt="ARCHITECTURE" src="https://github.com/user-attachments/assets/f9c7c2ee-eac0-4ff8-a1cf-a5eb89a75dfd" />
+
 
 ### ⚙️ Implemented Algorithms
 1.  **Input Buffer & Control Logic:** Manages the incoming I/Q data streams and synchronizes the processing pipeline.
