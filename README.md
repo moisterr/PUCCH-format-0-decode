@@ -43,7 +43,7 @@ The decoder architecture is designed to accurately extract the Uplink Control In
 │               └── pucch_logic_decoder.v
 ├── tb/                                       # Testbenches for simulation
 │   └── tb_pucch_top.sv
-
+```
 
 ## 🧪 Verification Strategy
 The verification process employs a strict Co-simulation approach to ensure bit-true and cycle-true accuracy:
