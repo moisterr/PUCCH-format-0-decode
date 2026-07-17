@@ -13,16 +13,14 @@ This project was developed as a graduation thesis to demonstrate advanced digita
 
 ## 🏗️ System Architecture
 The decoder architecture is designed to accurately extract the Uplink Control Information (UCI) bits (ACK/NACK, SR) from the received baseband signals.
-<img width="1190" height="472" alt="ARCHITECTURE" src="https://github.com/user-attachments/assets/a6c00ad8-5773-418e-89a3-cad30770fe24" />
 
+<img width="1190" height="472" alt="ARCHITECTURE" src="[https://github.com/user-attachments/assets/a6c00ad8-5773-418e-89a3-cad30770fe24](https://github.com/user-attachments/assets/a6c00ad8-5773-418e-89a3-cad30770fe24)" />
 
-
-Some algorithms implemented
+### ⚙️ Implemented Algorithms
 1.  **Input Buffer & Control Logic:** Manages the incoming I/Q data streams and synchronizes the processing pipeline.
 2.  **XOR Matrix for Fast State Jumping:** Integrated a parallel XOR matrix logic to accelerate sequence generation and hopping mechanisms. This architecture allows the system to compute rapid state transitions in a single clock cycle, significantly reducing datapath latency compared to traditional serial shift registers.
 3.  **Goertzel Algorithm Branch:** Efficiently computes specific Discrete Fourier Transform (DFT) terms to detect the presence of sequence cyclic shifts. Optimized for MAC (Multiply-Accumulate) operations to minimize DSP slice utilization.
 4.  **Peak Detector:** Analyzes the output from the Goertzel branches to identify the index of the maximum energy, mapping it back to the transmitted UCI bits.
-
 
 ## 📁 Directory Structure
 ```text 
