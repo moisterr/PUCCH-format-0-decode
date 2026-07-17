@@ -23,23 +23,23 @@ The decoder architecture is designed to accurately extract the Uplink Control In
 4.  **Peak Detector:** Analyzes the output from the Goertzel branches to identify the index of the maximum energy, mapping it back to the transmitted UCI bits.
 
 ## 📁 Directory Structure
-```text 
-├── src/pucch_vcu118_wrapper                  # Synthesizable RTL source files (SystemVerilog/Verilog)
-│   └── pucch_playback_ctrl.v
-│   ├── pucch_top.v
-    │   ├── pucch_controller.v
-    │   ├── pucch_datapath.v
-        │   ├── pucch_pre_cal_top.v
-        │   ├── pucch_decode_top.v
-            │   ├── pucch_cp_remover.v
-            │   ├── pucch_goertzel_top.v
-                │   ├── pucch_goertzel_branch.v
-            │   ├── pucch_de_spreader.v
-            │   ├── pucch_idft_top.v
-                │   ├── pucch_idft_branch.v
-            │   ├── pucch_peak_detector
-                │   ├── pucch_threshold_decision.v
-                │   ├── pucch_cmp_sum_unit.v
-            │   ├── pucch_logic_decoder.v
-├── tb/                   # Testbenches for module-level and system-level simulation
+```text
+├── src/pucch_vcu118_wrapper                  # Synthesizable RTL source files
+│   ├── pucch_playback_ctrl.v
+│   └── pucch_top.v
+│       ├── pucch_controller.v
+│       └── pucch_datapath.v
+│           ├── pucch_pre_cal_top.v
+│           └── pucch_decode_top.v
+│               ├── pucch_cp_remover.v
+│               ├── pucch_goertzel_top.v
+│               │   └── pucch_goertzel_branch.v
+│               ├── pucch_de_spreader.v
+│               ├── pucch_idft_top.v
+│               │   └── pucch_idft_branch.v
+│               ├── pucch_peak_detector
+│               │   ├── pucch_threshold_decision.v
+│               │   └── pucch_cmp_sum_unit.v
+│               └── pucch_logic_decoder.v
+├── tb/                                       # Testbenches for simulation
 │   └── tb_pucch_top.sv
